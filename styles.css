@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.image-container {
+    margin-bottom: 20px;
+}
+
+.draggable {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: move;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(6, 50px);  
+    gap: 5px; 
+    justify-content: center;
+}
+
+.grid-item {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #3117d7;
+    display: flex;      
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+footer {
+    margin-top: auto;
+    background-color:#202020;
+}
+.a {
+    margin-top: .5rem;
+}

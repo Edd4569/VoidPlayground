@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Voidworks Playground</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <div class="container button-container a">
+      <button id="drawPrompt" class="btn btn-warning btn-sm">Petpet Laboratory/Draw Prompts</button>
+      <button id="Mystery-Solving" class="btn btn-warning btn-sm">Mystery Solving Hub</button>
+      <button id="TradingPost" class="btn btn-success btn-sm">Baby Paintbrush Calculator</button>
+   </div>
+   <h1>Voidworks Playground</h1>
+   <body>
+      <div class="image-container">
+         <img src="vw-piece-move-lshapesprite.png" alt="elbow" id="L" draggable="true" class="draggable" data-code="L">
+         <img src="vw-piece-move-straightsprite.png" alt="straight" id="I" draggable="true" class="draggable" data-code="I">
+         <img src="vw-piece-move-tshapesprite.png" alt="t" id="T" draggable="true" class="draggable" data-code="T">
+         <img src="vw-piece-static-straightsprite.png" alt="straight-static" id="IF" draggable="true" class="draggable" data-code="IF">
+         <img src="vw-piece-static-endcapsprite.png" alt="light" id="EF" draggable="true" class="draggable" data-code="EF">
+         <img src="vw-piece-static-crosssprite.png" alt="static-cross" id="XF" draggable="true" class="draggable" data-code="XF">
+         <img src="vw-piece-start.png" alt="Start" id="piece-start" draggable="true" class="draggable" data-code="START">
+         <img src="vw-piece-endsprite.png" alt="End" id="piece-end" draggable="true" class="draggable" data-code="END">
+         <br>Drag pipes onto the Grid!
+      </div>
+      <br>
+      <div class="grid-container">
+      </div>
+      <br>  
+      <div class="button-container">
+        <button type="button" class="btn btn-danger btn-sm" id="clearBtn">Clear Grid</button>
+      </div>
+      <br>
+      <div>
+         <label for="predefinedArraysDropdown">Known Solutions:</label> 
+         <select id="predefinedArraysDropdown">
+            <option value="">Select...</option>
+         </select>
+      </div>
+      <br>
+      <div class="input-container">
+         <label for="loadArray">Enter array to load:</label>
+         <input type="text" id="loadArray" placeholder="Enter array here" />
+         <button type="button" class="btn btn-primary btn-sm" id="loadBtn">Load</button>
+      </div>
+      <script src="predefinedArrays.js"></script>
+      <script src="script.js"></script>
+      <script>
+         document.getElementById("drawPrompt").onclick = function () {location.href = "https://edd4569.github.io/NeopetsDrawPrompts/";};
+         document.getElementById("Mystery-Solving").onclick = function () {location.href = "https://edd4569.github.io/Mystery-Solving/";};
+         document.getElementById("TradingPost").onclick = function () {location.href = "https://edd4569.github.io/tradingpost/";};
+      </script>
+      <br>
+      <footer>
+         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            <p>© 1999-2024 Neopets, Inc. All rights reserved.<br>
+               Special Thanks to Qauil and the JN Team for providing solutions!
+            </p>
+            <figcaption class="blockquote-footer">
+               <p>This is an unauthorized fan site (v10.31.2024) Questions? Concerns? Ideas? DM @eddwith3ds on discord</p>
+            </figcaption>
+         </div>
+      </footer>
+   </body>
+</html>
