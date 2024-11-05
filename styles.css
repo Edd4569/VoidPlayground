@@ -33,13 +33,23 @@ body {
     position: relative;
 }
 
-footer {
-    /* margin-top: auto; */
-    background-color:#202020;
-    position: fixed;
-    width: 100%;
-    bottom:0;
-}
 .a {
     margin-top: .5rem;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        background-color:#202020;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    footer {
+        /* margin-top: auto; */
+        background-color:#202020;
+        position: fixed;
+        width: 100%;
+        bottom:0;
+    }
 }
