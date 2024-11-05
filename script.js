@@ -154,3 +154,39 @@ document.getElementById('predefinedArraysDropdown').addEventListener('change', (
         alert('Please select a valid array from the dropdown.');
     }
 });
+
+// Image to code mapping
+const codeMap = {
+    "vw-piece-move-lshapesprite.png": "L",
+    "vw-piece-move-straightsprite.png": "I",
+    "vw-piece-move-tshapesprite.png": "T",
+    "vw-piece-static-straightsprite.png": "IF",
+    "vw-piece-static-endcapsprite.png": "EF",
+    "vw-piece-static-crosssprite.png": "XF",
+    "vw-piece-start.png": "START",
+    "vw-piece-endsprite.png": "END"
+};
+
+function saveGridToArray() {
+    let gridArray = [];
+
+    gridItems.forEach(gridItem => {
+        if (gridItem.hasChildNodes()) {
+            const imgElement = gridItem.firstChild;
+            const imgSrc = imgElement.src.split('/').pop();
+            const code = codeMap[imgSrc] || "V"; 
+            const rotation = parseInt(imgElement.getAttribute('data-rotation') || "0", 10);
+            const r = rotation / 90;
+            gridArray.push([code, r]);
+        } else {
+            gridArray.push(["V", 0]);
+        }
+    });
+    navigator.clipboard.writeText(JSON.stringify(gridArray));
+    return gridArray;
+}
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+    const savedArray = saveGridToArray();
+    alert("Grid saved to clipboard!",savedArray);
+});
