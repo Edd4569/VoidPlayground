@@ -48,7 +48,7 @@ body {
     footer {
         /* margin-top: auto; */
         background-color:#202020;
-        position: fixed;
+        /* position: fixed; */
         width: 100%;
         bottom:0;
     }
