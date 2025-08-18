@@ -53,3 +53,14 @@ body {
         bottom:0;
     }
 }
+
+#KnownTarla {
+  background-color: #4B0082;
+  border-color: #4B0082;
+  color: #fff;
+}
+
+#KnownTarla:hover {
+  background-color: #360061;
+  border-color: #360061;
+}
