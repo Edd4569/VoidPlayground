@@ -119,8 +119,10 @@ document.getElementById('loadBtn').addEventListener('click', () => {
     });
 });
 
-document.getElementById('predefinedArraysDropdown').addEventListener('change', () => {
-    const selectedArrayName = document.getElementById('predefinedArraysDropdown').value;
+const dropdown = document.getElementById('predefinedArraysDropdown');
+
+dropdown.addEventListener('change', () => {
+    const selectedArrayName = dropdown.value;
 
     if (selectedArrayName && predefinedArrays[selectedArrayName]) {
         const selectedArray = predefinedArrays[selectedArrayName];
@@ -154,6 +156,22 @@ document.getElementById('predefinedArraysDropdown').addEventListener('change', (
         alert('Please select a valid array from the dropdown.');
     }
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const index = params.get("index");
+
+    if (index !== null) {
+        const regex = new RegExp(`^${index}(\\D|$)`);
+        const match = Array.from(dropdown.options).find(opt => regex.test(opt.value));
+
+        if (match) {
+            dropdown.value = match.value;
+            dropdown.dispatchEvent(new Event("change"));
+        }
+    }
+});
+
 
 // Image to code mapping
 const codeMap = {
